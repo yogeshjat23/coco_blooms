@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coco Blooms – Handmade Pipecleaner Bouquets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFE6EE;--surf:#FFF8FA;--soft:#FFCFDF;--ink:#4A2420;--mute:#8A6A66;--pink:#E8457F;--sun:#F7B500;--leaf:#6BA339;--line:#F6B8CB;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#FFE6EE,#FFDCE8 50%,#FFE6EE);background-attachment:fixed;color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Fraunces,serif;font-weight:700;font-size:21px}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-weight:600}
+nav ul a{text-decoration:none;color:var(--mute)}nav ul a:hover{color:var(--pink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--pink);color:#fff;border:0;border-radius:999px;padding:13px 24px;font:800 16px Nunito,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.hero{padding:56px 0 84px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(44px,7vw,84px);letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--pink)}
+.hero p{font-size:19px;color:var(--mute);max-width:30em;margin:22px 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stack{position:relative;height:540px}
+.stack img{position:absolute;border-radius:26px;object-fit:cover;box-shadow:0 18px 40px -18px #4A242088;border:6px solid var(--surf)}
+.stack .a{width:52%;height:78%;left:0;top:10%;transform:rotate(-6deg)}
+.stack .b{width:50%;height:68%;right:0;top:0;transform:rotate(5deg)}
+.stack .c{width:40%;height:44%;right:14%;bottom:0;transform:rotate(-2deg)}
+.sticker{position:absolute;left:38%;top:2%;z-index:3;background:var(--sun);color:#4A2420;font:700 15px/1.2 Fraunces,serif;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(12deg);animation:pop .8s .3s both cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(0) rotate(-30deg)}}
+.marq{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:12px 0;font:italic 500 20px Fraunces,serif}
+.marq div{display:inline-block;animation:mv 28s linear infinite}
+@keyframes mv{to{transform:translateX(-50%)}}
+section{padding:84px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.head h2{font-size:clamp(34px,5vw,54px)}
+.head p{color:var(--mute);margin:8px 0 0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{border:2px solid var(--line);background:var(--surf);color:var(--ink);border-radius:999px;padding:8px 18px;font:700 15px Nunito,sans-serif;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.card{background:var(--surf);border-radius:24px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.card .ph{aspect-ratio:4/5;overflow:hidden;background:var(--soft)}
+.card img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .5s}
+.card:hover img{transform:scale(1.05)}
+.card .bd{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:21px}.row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.price{font:700 20px Fraunces,serif;color:var(--pink);white-space:nowrap}.card p{margin:0;color:var(--mute);font-size:15px;flex:1}
+.card .btn{margin-top:10px;padding:10px 18px;font-size:15px;justify-content:center}
+.soon{border:2px dashed var(--line);background:transparent;align-items:center;justify-content:center;text-align:center;padding:30px;min-height:300px}
+.soon .em{font-size:44px}
+.about{background:var(--soft)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about h2{font-size:clamp(34px,5vw,52px);margin-bottom:16px}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.perks div{background:var(--surf);border-radius:18px;padding:14px 16px}
+.perks b{display:block;font-family:Fraunces,serif;font-size:18px}.perks span{color:var(--mute);font-size:14px}
+.posters{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.posters img{width:100%;border-radius:22px;border:5px solid var(--surf);transform:rotate(-2deg)}
+.posters img+img{transform:rotate(2deg);margin-top:30px}
+.custom{background:var(--ink);color:var(--bg);text-align:center;border-radius:36px;padding:60px 24px;margin:0 22px}
+.custom h2{font-size:clamp(32px,5vw,52px);margin-bottom:14px}
+.custom p{max-width:36em;margin:0 auto 26px;opacity:.85}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.channels{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.ch{display:flex;align-items:center;gap:16px;background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:16px 20px;text-decoration:none}
+.ch .ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:var(--soft)}
+.ch small{display:block;color:var(--mute)}.ch b{font-size:18px}
+form{background:var(--surf);border:1px solid var(--line);border-radius:26px;padding:26px;display:grid;gap:14px}
+label{font-weight:700;font-size:15px;display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:11px 14px;width:100%}
+textarea{min-height:100px;resize:vertical}
+footer{padding:36px 0 48px;text-align:center;color:var(--mute);font-size:15px}
+footer img{width:70px;border-radius:50%}
+@media(max-width:820px){nav ul{display:none}.hero .wrap,.about .wrap,.contact .wrap{grid-template-columns:1fr}.stack{height:420px}section{padding:60px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.hero{position:relative;background:radial-gradient(60% 50% at 80% 20%,color-mix(in srgb,var(--sun) 30%,transparent),transparent),radial-gradient(50% 50% at 8% 85%,color-mix(in srgb,var(--pink) 24%,transparent),transparent)}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;animation:fl 9s ease-in-out infinite}
+.b1{width:300px;height:300px;background:var(--pink);left:-90px;top:30px}.b2{width:260px;height:260px;background:var(--sun);right:-70px;bottom:-50px;animation-delay:-4s}
+#petals{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#petals span{position:absolute;top:-40px;color:var(--pink);opacity:.45;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(760px) rotate(360deg)}}
+@keyframes fl{50%{translate:0 -14px}}
+.hero .wrap{position:relative;z-index:1}
+.glass{background:color-mix(in srgb,var(--surf) 68%,transparent);backdrop-filter:blur(10px);border:1px solid var(--line)}
+.pill{display:inline-block;padding:6px 16px;border-radius:999px;font-weight:800;font-size:14px;margin-bottom:18px}
+.hero h1 em{background:linear-gradient(90deg,var(--pink),var(--sun));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.1em}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.stats span{border-radius:16px;padding:9px 15px;font-weight:800;font-size:14px}
+.scene{perspective:1000px}
+.stack{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s ease-out}
+.stack::before{content:"";position:absolute;inset:4% 2%;border-radius:50%;border:2px dashed var(--pink);opacity:.5;transform:translateZ(-70px)}
+.stack img{animation:fl 6s ease-in-out infinite;box-shadow:0 40px 60px -25px #4A2420aa}
+.stack .a{transform:rotate(-6deg) translateZ(40px)}
+.stack .b{transform:rotate(5deg) translateZ(95px);animation-delay:-2s}
+.stack .c{transform:rotate(-2deg) translateZ(150px);animation-delay:-4s}
+.sticker{transform:rotate(12deg) translateZ(190px)}
+.card{transition:transform .25s ease-out,box-shadow .25s;box-shadow:0 10px 30px -20px #4A2420;will-change:transform}
+.card:hover{box-shadow:0 34px 50px -24px #4A2420bb}
+.progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:4px;width:0;background:linear-gradient(90deg,var(--pink),var(--sun));z-index:40}
+.btn{position:relative;overflow:hidden}.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,#fff7 50%,transparent 70%);translate:-110% 0;transition:translate .6s}.btn:hover::after{translate:110% 0}
+.wave{position:absolute;bottom:-1px;left:0;width:100%;height:46px;display:block}
+.head h2::after{content:"";display:block;width:72px;height:6px;border-radius:9px;background:linear-gradient(90deg,var(--pink),var(--sun));margin-top:12px}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}.reveal.in{opacity:1;transform:none}
+.card{animation:up .7s both}@keyframes up{from{opacity:0;translate:0 36px}}
+.gal{overflow:hidden;padding:0 0 76px}
+#gal{display:flex;gap:18px;width:max-content;animation:mv 55s linear infinite;padding:16px 0}
+#gal:hover{animation-play-state:paused}
+#gal img{height:280px;width:210px;object-fit:cover;border-radius:24px;border:5px solid var(--surf);box-shadow:0 24px 36px -22px #4A2420cc;rotate:-3deg}
+#gal img:nth-child(even){rotate:3deg;margin-top:26px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;perspective:900px}
+.step{background:var(--surf);border:1px solid var(--line);border-radius:28px;padding:30px;transition:transform .35s,box-shadow .35s}
+.step:hover{transform:translateY(-10px) rotateX(7deg);box-shadow:0 30px 40px -24px #4A2420aa}
+.step .n{font:700 72px/1 Fraunces,serif;background:linear-gradient(135deg,var(--pink),var(--sun));-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:24px;margin:10px 0 6px}.step p{margin:0;color:var(--mute)}
+@media(max-width:820px){.steps{grid-template-columns:1fr}#gal img{height:220px;width:165px}}
+
+.rail{position:relative;overflow:hidden;padding:34px 0 26px}
+.train{display:flex;flex-direction:row-reverse;align-items:flex-end;width:max-content;animation:run 26s linear infinite}
+@keyframes run{from{translate:-100% 0}to{translate:100vw 0}}
+.eng{position:relative;width:170px;height:120px;margin-left:8px;flex:none}.eng svg{width:170px;transform:scaleX(-1);display:block}
+.puff{position:absolute;right:26px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--surf);opacity:0;animation:puff 2.4s ease-out infinite}
+.puff.p2{animation-delay:.8s}.puff.p3{animation-delay:1.6s}
+@keyframes puff{0%{opacity:.9;translate:0 0;scale:.4}100%{opacity:0;translate:-60px -70px;scale:2.2}}
+.car{position:relative;width:150px;margin-left:10px;flex:none}
+.car img{width:132px;height:110px;object-fit:cover;object-position:center 25%;border-radius:16px 16px 0 0;display:block;margin:0 auto;border:4px solid var(--surf)}
+.car .bed{height:26px;border-radius:8px}
+.car::after{content:"";position:absolute;right:-12px;bottom:12px;width:14px;height:5px;background:var(--ink)}
+.w{position:absolute;bottom:-13px;width:26px;height:26px;border-radius:50%;background:var(--ink);border:5px double var(--sun);animation:spin .7s linear infinite}
+.eng~.car .w1,.w1{left:18px}.w2{right:18px}
+.track{height:8px;margin-top:6px;border-top:4px solid var(--ink);background:repeating-linear-gradient(90deg,var(--ink) 0 12px,transparent 12px 26px);opacity:.55}
+.build{padding:0;height:340vh;position:relative}
+.sticky{position:sticky;top:calc(68px + env(safe-area-inset-top,0px));height:calc(100vh - 68px);display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.bt h2{font-size:clamp(32px,4.6vw,54px);margin:14px 0}
+#cap{font-size:20px;color:var(--mute);min-height:3.2em;transition:opacity .3s}
+.bar{height:8px;background:var(--soft);border-radius:9px;margin:20px 0;overflow:hidden;max-width:380px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--sun))}
+#bq{width:100%;max-height:calc(100vh - 110px);filter:drop-shadow(0 30px 30px #4A242044)}
+#bq g.pc{transform-box:fill-box;transform-origin:center;will-change:transform}
+.orb{position:relative;aspect-ratio:1;max-width:420px;width:100%;margin:auto;display:grid;place-items:center}
+.orb .ring{position:absolute;inset:0;width:100%;animation:spin 26s linear infinite}
+.orb .ring text{font:700 15px Fraunces,serif;fill:var(--ink);letter-spacing:2px}
+.orb>img{width:50%;aspect-ratio:1;border-radius:50%;object-fit:cover;border:8px solid var(--surf);box-shadow:0 26px 40px -20px #4A2420aa}
+.orb::before{content:"";position:absolute;inset:14%;border-radius:50%;border:2px dashed var(--pink);animation:spin 40s linear infinite reverse}
+.chip{position:absolute;border-radius:999px;padding:9px 16px;font-weight:800;font-size:14px;animation:fl 5s ease-in-out infinite}
+.chip.c1{left:-2%;top:14%}.chip.c2{right:-4%;top:38%;animation-delay:-2s}.chip.c3{left:6%;bottom:8%;animation-delay:-3.5s}
+@keyframes spin{to{rotate:360deg}}
+@media(max-width:820px){.sticky{grid-template-columns:1fr;gap:6px;align-content:start;padding-top:10px}#bq{max-height:50vh}.bt h2{font-size:30px;margin:8px 0}#cap{font-size:16px;min-height:2.6em}.bar{margin:10px 0}.build{height:300vh}.car{width:120px}.car img{width:104px;height:88px}}
+
+.ic.lg{background:none;border-radius:0}.ic.lg svg{width:100%;height:100%;display:block;filter:drop-shadow(0 6px 8px #4A242033)}
+
+.ph{position:relative;cursor:zoom-in}
+.tg{position:absolute;left:12px;top:12px;z-index:2;background:var(--sun);color:#4A2420;font-weight:800;font-size:12px;padding:4px 12px;border-radius:999px;box-shadow:0 6px 12px -6px #4A2420}
+.qv{position:absolute;left:50%;bottom:14px;translate:-50% 18px;opacity:0;z-index:2;background:var(--surf);padding:7px 16px;border-radius:999px;font-weight:800;font-size:13px;transition:.25s;white-space:nowrap}
+.ph:hover .qv{opacity:1;translate:-50% 0}
+.modal{position:fixed;inset:0;z-index:60;background:#4A242099;backdrop-filter:blur(6px);display:grid;place-items:center;padding:20px}.modal[hidden]{display:none}
+.mbox{background:var(--surf);border-radius:30px;max-width:840px;width:100%;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;max-height:90vh;animation:pop2 .3s ease-out}
+@keyframes pop2{from{opacity:0;scale:.92}}
+.mbox img{width:100%;height:100%;max-height:82vh;object-fit:cover;display:block}
+.mt{padding:34px 28px;display:flex;flex-direction:column;gap:12px;justify-content:center;align-items:flex-start}
+.mt h3{font-size:34px}.mt .price{font-size:28px}.mt p{margin:0;color:var(--mute)}
+.x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:var(--surf);color:var(--ink);cursor:pointer;font-size:18px;z-index:2;box-shadow:0 4px 12px -4px #0006}
+.mnav{display:flex;gap:8px;margin-top:6px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px}
+.tile{position:relative;border-radius:30px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}.tile:hover img{transform:scale(1.07)}
+.cap{position:absolute;left:14px;bottom:14px;padding:8px 16px;border-radius:999px;font-weight:800;font-size:14px}
+.tile b{font:700 58px/1 Fraunces,serif}.tile>span{font-weight:700}
+.bt1{grid-area:1/1/3/3}.bt2{grid-area:1/3/2/4}.bt3{grid-area:1/4/3/5}.bt4{grid-area:2/3/3/4}.bt5{grid-area:3/1/4/3}.bt6{grid-area:3/3/4/5}
+.pk{background:linear-gradient(135deg,var(--pink),#FF8FB1);color:#fff}.yl{background:var(--sun);color:#4A2420}
+.pal{background:var(--surf);border:1px solid var(--line);justify-content:space-between}
+.pal>span{font:700 26px Fraunces,serif}.dots{display:flex;gap:10px;flex-wrap:wrap}.dots i{width:42px;height:42px;border-radius:50%;background:var(--c);border:3px solid var(--surf);box-shadow:0 0 0 2px var(--line),0 8px 12px -6px #4A2420;transition:translate .25s}.dots i:hover{translate:0 -8px}
+.faq .wrap{max-width:780px}
+details{background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:2px 22px;margin-bottom:12px}
+summary{cursor:pointer;font:700 19px Fraunces,serif;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:28px;color:var(--pink);transition:rotate .3s}details[open] summary::after{rotate:45deg}
+details p{margin:0 0 18px;color:var(--mute)}
+@media(max-width:820px){.mbox{grid-template-columns:1fr;overflow:auto}.mbox img{max-height:40vh}.bento{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.bento .tile{grid-area:auto!important}.bt1{grid-column:span 2;grid-row:span 2}.bt5{grid-column:span 2}.tile b{font-size:44px}}
+
+.ann{background:var(--ink);color:#FFE9EC;text-align:center;font-weight:700;font-size:14px;padding:9px 14px}
+.bar2{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.srt{display:flex;gap:8px;align-items:center;font-weight:800}
+.srt select{width:auto;border-radius:999px;border:2px solid var(--line);background:var(--surf);padding:8px 14px;font:inherit;color:var(--ink)}
+.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:40px}
+.bud3{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.bgt{border:0;text-align:left;border-radius:30px;padding:22px;cursor:pointer;font:inherit;display:flex;flex-direction:column;gap:4px;min-height:210px;justify-content:flex-end;transition:transform .3s,box-shadow .3s}
+.bgt b{font:700 30px/1.1 Fraunces,serif}.bgt small{font-weight:800;opacity:.85}.bgt span{font-weight:700}
+.bgt em{font-style:normal;font-weight:800;margin-top:10px;background:#ffffff40;border-radius:999px;padding:5px 14px;align-self:flex-start}
+.bgt:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 30px 40px -24px #4A2420aa}
+.g1{background:linear-gradient(135deg,#E8457F,#FF8FB1);color:#fff}.g2{background:linear-gradient(135deg,#F7B500,#F58A1F);color:#4A2420}.g3{background:linear-gradient(135deg,#4A2420,#8A3B3B);color:#FFE9EC}
+.igband{border-radius:38px;padding:40px;color:#fff;background:linear-gradient(120deg,#E8457F,#C13584 55%,#6A2FA8);display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center;overflow:hidden}
+.igband h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 10px}.igband p{margin:0 0 22px;opacity:.92}
+.igband .btn{background:#fff;color:#C13584}
+.igp{display:grid;grid-template-columns:1fr 1fr;gap:12px;rotate:3deg}
+.igp img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;border:4px solid #fff}.igp img:nth-child(even){translate:0 18px}
+.igband .lg2{width:52px;height:52px}
+footer{background:var(--ink);color:#FFE9EC;padding:56px 0 28px;text-align:left;font-size:16px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+footer img{width:64px;height:64px;border-radius:50%;margin-bottom:12px}
+footer h4{font:700 19px Fraunces,serif;margin:0 0 12px}footer p{margin:0;opacity:.8}
+footer a{display:block;text-decoration:none;opacity:.85;margin:7px 0}footer a:hover{opacity:1;color:#FFB6CB}
+footer .cp{border-top:1px solid #FFE9EC33;margin-top:34px;padding-top:18px;font-size:14px;opacity:.7;text-align:center}
+@media(max-width:820px){.bud3,.igband,.fg{grid-template-columns:1fr}.igband{padding:28px}.igp{rotate:0deg}}
+.g4{background:linear-gradient(135deg,#5E9A2E,#9BD25A);color:#fff}.g5{background:linear-gradient(135deg,#8E5BD6,#C7A6F2);color:#fff}
+@media(max-width:820px){.bud3{grid-template-columns:1fr 1fr}.bud3 .g3{grid-column:span 2}}
+</style></head><body>
+<div class="ann">✿ Handmade with love · Custom colours available · Order on WhatsApp ✿</div><div class="progress" id="pg"></div><header><div class="wrap"><nav>
+<a class="brand" href="#top"><img data-img="logo" alt="Coco Blooms logo">Coco Blooms</a>
+<ul><li><a href="#shop">Shop</a></li><li><a href="#about">Our story</a></li><li><a href="#custom">Custom orders</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="btn" href="#contact">Order now</a></nav></div></header>
+<main id="top">
+<div class="hero"><div class="blob b1"></div><div class="blob b2"></div><div id="petals"></div><div class="wrap">
+<div><span class="pill glass">✿ Handmade pipecleaner flowers</span><h1>Flowers that <em>never</em> wilt.</h1>
+<p>Handmade pipecleaner bouquets, keychains and little flower pots, made one petal at a time. Pick your colours, add a message, and gift something that lasts.</p>
+<div class="cta"><a class="btn" href="#shop">Shop bouquets</a><a class="btn alt" href="#contact">Place an order</a></div><div class="stats"><span class="glass">🌸 100% handmade</span><span class="glass">🎨 Custom colours</span><span class="glass">♾️ Never wilts</span></div></div>
+<div class="scene"><div class="stack"><img class="a" data-img="sunflowerGarden" alt="Sunflower bouquet"><img class="b" data-img="sunsetLily" alt="Sunset lily and tulip bouquet"><img class="c" data-img="blueHydrangea" alt="Blue hydrangea bouquet"><div class="sticker">Handmade with love</div></div></div>
+</div><svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30Q360 0 720 30T1440 30V60H0Z" fill="var(--bg)"/></svg></div>
+<section class="build" id="build"><div class="sticky wrap"><div class="bt"><span class="pill glass">✿ Watch it bloom</span><h2>Every bouquet starts with one petal</h2><p id="cap"></p><div class="bar"><i id="bar"></i></div><a class="btn" href="#shop">Shop bouquets</a></div><svg id="bq" viewBox="0 0 400 520" role="img" aria-label="A bouquet assembling as you scroll"></svg></div></section>
+
+<section id="shop"><div class="wrap">
+<div class="head"><div><h2>The Coco Blooms shelf</h2><p>Every piece can be made in your favourite colours. Prices are starting prices; custom designs may vary.</p></div>
+<div class="tabs" id="tabs"></div></div>
+<div class="bar2"><div class="tabs" id="bud"></div><label class="srt">Sort <select id="sort"><option value="def">Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select></label></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="budget"><div class="wrap"><div class="head"><div><h2>Gifts for every budget</h2><p>Tap a range to see matching items.</p></div></div><div class="bud3">
+<button class="bgt g4" data-b="u1"><small>Under</small><b>₹100</b><span>Cute clips and little treats</span><em></em></button>
+<button class="bgt g5" data-b="u2"><small>Under</small><b>₹200</b><span>Keychains and hairbands</span><em></em></button>
+<button class="bgt g1" data-b="u5"><small>Under</small><b>₹500</b><span>Sweet little gifts</span><em></em></button>
+<button class="bgt g2" data-b="m"><small>From</small><b>₹500–1,000</b><span>Bright, full bouquets</span><em></em></button>
+<button class="bgt g3" data-b="p"><small>Above</small><b>₹1,000</b><span>Grand statement bouquets</span><em></em></button></div></div></section>
+<section id="craft"><div class="wrap"><div class="head"><div><h2>Made petal by petal</h2><p>Soft, fluffy and totally yours.</p></div></div>
+<div class="bento"><div class="tile bt1"><img data-img="sunsetLily" alt="Sunset lily and tulip bouquet"><span class="cap glass">Statement bouquets</span></div>
+<div class="tile bt2 pk"><b>100%</b><span>handmade, one bouquet at a time</span></div>
+<div class="tile bt3"><img data-img="evilEye" alt="Evil eye bouquet with a message card"><span class="cap glass">Custom message cards</span></div>
+<div class="tile bt4 yl"><b>∞</b><span>blooms that never wilt</span></div>
+<div class="tile bt5 pal"><span>Pick any colour you love</span><div class="dots"><i style="--c:#E8457F"></i><i style="--c:#F7B500"></i><i style="--c:#2F7BE5"></i><i style="--c:#8E5BD6"></i><i style="--c:#F58A1F"></i><i style="--c:#6BA339"></i><i style="--c:#FFFFFF"></i></div></div>
+<div class="tile bt6"><img data-img="blueHydrangea" alt="Blue hydrangea bouquet"><span class="cap glass">Hydrangea clouds</span></div></div></div></section>
+<section class="about" id="about"><div class="wrap">
+<div><h2>Small things make big smiles</h2>
+<p>Coco Blooms is a small handmade studio. Each flower is twisted, fluffed and wrapped by hand, then tied with a ribbon that matches your mood. Birthdays, anniversaries, thank-yous or just because: there is a bloom for it.</p>
+<div class="perks"><div><b>Lasts forever</b><span>No wilting, no watering</span></div><div><b>Low maintenance</b><span>Just keep it pretty</span></div><div><b>Budget friendly</b><span>A unique gift, fairly priced</span></div><div><b>Customisable</b><span>Your colours, your style</span></div></div></div>
+<div class="orb"><svg class="ring" viewBox="0 0 300 300" aria-hidden="true"><defs><path id="cp" d="M150 150m-122 0a122 122 0 1 1 244 0a122 122 0 1 1-244 0"/></defs><text><textPath href="#cp" textLength="760" lengthAdjust="spacing">HANDMADE WITH LOVE ✿ COCO BLOOMS ✿ HANDMADE WITH LOVE ✿ COCO BLOOMS ✿</textPath></text></svg><img data-img="logo" alt="Coco Blooms logo"><span class="chip glass c1">♾️ Never wilts</span><span class="chip glass c2">🎨 Your colours</span><span class="chip glass c3">💌 Made with love</span></div>
+</div></section>
+
+<section id="how"><div class="wrap"><div class="head"><div><h2>How to order</h2><p>Three easy steps, no payment on the website.</p></div></div>
+<div class="steps"><div class="step reveal"><div class="n">1</div><h3>Pick your bloom</h3><p>Browse the shelf and choose a bouquet, keychain or flower pot. Or dream up your own.</p></div>
+<div class="step reveal"><div class="n">2</div><h3>Message us</h3><p>Tap Order on WhatsApp. Share colours, a message card and the date you need it.</p></div>
+<div class="step reveal"><div class="n">3</div><h3>We craft it</h3><p>Your piece is made by hand, wrapped with a ribbon and ready to gift.</p></div></div></div></section>
+<div class="gal" aria-hidden="true"><div id="gal"></div></div>
+<section id="custom"><div class="custom"><h2>Dreaming of something different?</h2><p>Tell us the colours, flowers and message you want. We will craft a bouquet, keychain or flower pot just for you.</p>
+<a class="btn" style="background:var(--sun);color:#4A2420" id="wa2" href="#">Chat on WhatsApp</a></div></section>
+
+<section class="faq" id="faq"><div class="wrap"><div class="head"><div><h2>Good to know</h2></div></div>
+<details><summary>How do I order?</summary><p>Tap Order on WhatsApp on any bouquet, or send the contact form. Share your colours, card message and the date you need it, and we will confirm the details and final price.</p></details>
+<details><summary>Can I change the colours or flowers?</summary><p>Yes. Every piece can be made in your favourite colours. Custom designs may vary in price.</p></details>
+<details><summary>Do the flowers really last forever?</summary><p>Pipecleaner flowers do not wilt and need no water. Keep them dry and dust them gently, and they stay pretty for years.</p></details>
+<details><summary>Can you add a message card?</summary><p>Yes. We can add a handwritten note, like the Happy Birthday card on our Evil Eye bouquet.</p></details>
+<details><summary>Do you make keychains and flower pots?</summary><p>They are coming to the shop soon. Message us on WhatsApp and we can make one for you today.</p></details></div></section>
+<section id="insta"><div class="wrap"><div class="igband"><div><svg class="lg2" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6.5" fill="#fff"/><rect x="5" y="5" width="14" height="14" rx="4.2" fill="none" stroke="#C13584" stroke-width="1.8"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#C13584" stroke-width="1.8"/><circle cx="16.4" cy="7.6" r="1.1" fill="#C13584"/></svg><h2>Follow @coco._.blooms</h2><p>New bouquets, behind-the-scenes and custom order ideas, all on Instagram.</p><a class="btn iglink" target="_blank" rel="noopener">Follow on Instagram</a></div>
+<div class="igp"><img data-img="sunflowerGarden" alt=""><img data-img="purpleLily" alt=""><img data-img="evilEye" alt=""><img data-img="violetHydrangea" alt=""></div></div></div></section>
+<section class="contact" id="contact"><div class="wrap">
+<div><h2 style="font-size:clamp(34px,5vw,52px)">Let’s make yours</h2><p style="color:var(--mute)">Send us a message with what you like and your date. We reply with details and pricing.</p>
+<div class="channels">
+<a class="ch" id="wa" href="#"><span class="ic lg"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="12" fill="#25D366"/><path transform="translate(4.4 4.4) scale(.63)" fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span><small>WhatsApp</small><b>+91 83390 71507</b></span></a>
+<a class="ch" href="tel:+918339071507"><span class="ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="#E8457F" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span><span><small>Call</small><b>83390 71507</b></span></a>
+<a class="ch" id="ig" href="#" target="_blank" rel="noopener"><span class="ic lg"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".55" stop-color="#D62976"/><stop offset=".8" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect width="24" height="24" rx="6.5" fill="url(#igg)"/><rect x="5" y="5" width="14" height="14" rx="4.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.4" cy="7.6" r="1.1" fill="#fff"/></svg></span><span><small>Instagram</small><b>@coco._.blooms</b></span></a></div></div>
+<form id="f"><label>Your name<input name="n" required></label>
+<label>What would you like?<select name="p"><option>Bouquet</option><option>Keychain</option><option>Flower pot</option><option>Something custom</option></select></label>
+<label>Colours, flowers or message<textarea name="m" placeholder="e.g. blue and white tulips, card saying Happy Birthday"></textarea></label>
+<button class="btn" type="submit">Send order on WhatsApp</button></form>
+</div></section></main>
+<footer><div class="wrap"><div class="fg"><div><img data-img="logo" alt="Coco Blooms logo"><p>Handmade pipecleaner bouquets, keychains and flower pots. Small things make big smiles.</p></div>
+<div><h4>Explore</h4><a href="#shop">Shop</a><a href="#about">Our story</a><a href="#how">How to order</a><a href="#faq">Good to know</a><a href="#contact">Contact</a></div>
+<div><h4>Say hello</h4><a class="walink" target="_blank" rel="noopener">WhatsApp: +91 83390 71507</a><a class="iglink" target="_blank" rel="noopener">Instagram: @coco._.blooms</a></div></div>
+<div class="cp">© 2026 Coco Blooms · Handmade with love</div></div></footer>
+<div class="modal" id="modal" hidden><div class="mbox" role="dialog" aria-modal="true" aria-label="Product preview"><button class="x" id="mx" aria-label="Close">✕</button><img id="mi" alt=""><div class="mt"><span class="pill glass" id="mtag"></span><h3 id="mn"></h3><div class="price" id="mp"></div><p id="mdsc"></p><a class="btn" id="mo" target="_blank" rel="noopener">Order on WhatsApp</a><div class="mnav"><button class="tab" id="mprev">← Prev</button><button class="tab" id="mnext">Next →</button></div></div></div></div>
+<script>
+/* =====================================================
+   IMAGES: key -> picture. Add new keys for new products.
+   ===================================================== */
+const IMG={
+  hb8:"images/hb8.jpg",
+  hb9:"images/hb9.jpg",
+  fp1:"images/fp1.jpg",
+  fp2:"images/fp2.jpg",
+  fp3:"images/fp3.jpg",
+  fp4:"images/fp4.jpg",
+  fp5:"images/fp5.jpg",
+  fp6:"images/fp6.jpg",
+  fp7:"images/fp7.jpg",
+  fp8:"images/fp8.jpg",
+  fp9:"images/fp9.jpg",
+  fp10:"images/fp10.jpg",
+  fp12:"images/fp12.jpeg",
+  mb1:"images/mb1.jpg",
+  fp11:"images/fp11.jpg",
+  mb2:"images/mb2.jpg",
+  kc1:"images/kc1.jpg",
+  kc2:"images/kc2.jpg",
+  kc3:"images/kc3.jpg",
+  kc4:"images/kc4.jpg",
+  kc5:"images/kc5.jpg",
+  kc6:"images/kc6.jpg",
+  kc7:"images/kc7.jpg",
+  kc8:"images/kc8.jpg",
+  kc9:"images/kc9.jpg",
+  kc10:"images/kc10.jpg",
+  kc11:"images/kc11.jpg",
+  kc12:"images/kc12.jpg",
+  kc13:"images/kc13.jpg",
+  hb1:"images/hb1.jpg",
+  hb2:"images/hb2.jpg",
+  hb3:"images/hb3.jpg",
+  hb4:"images/hb4.jpg",
+  hb5:"images/hb5.jpg",
+  hb6:"images/hb6.jpg",
+  hb7:"images/hb7.jpg",
+  hair1:"images/hair1.jpg",
+  hair2:"images/hair2.jpg",
+  hair3:"images/hair3.jpg",
+  hair4:"images/hair4.jpg",
+  hair5:"images/hair5.jpg",
+  hair6:"images/hair6.jpg",
+  hair7:"images/hair7.jpg",
+  hair8:"images/hair8.jpg",
+  hair9:"images/hair9.jpg",
+  hair10:"images/hair10.jpg",
+  hair11:"images/hair11.jpg",
+  hair12:"images/hair12.jpg",
+  hair13:"images/hair13.jpg",
+  hair14:"images/hair14.jpg",
+  hair15:"images/hair15.jpg",
+  hair16:"images/hair16.jpg",
+  hair17:"images/hair17.jpg",
+  hair18:"images/hair18.jpg",
+  hair19:"images/hair19.jpg",
+  hair20:"images/hair20.jpg",
+  logo:"images/logo.jpg",
+  sunflowerGarden:"images/sunflowerGarden.jpg",
+  singleSunflower:"images/singleSunflower.jpg",
+  purpleLily:"images/purpleLily.jpg",
+  evilEye:"images/evilEye.jpg",
+  blackSunflower:"images/blackSunflower.jpg",
+  sunsetLily:"images/sunsetLily.jpg",
+  blueHydrangea:"images/blueHydrangea.jpg",
+  violetHydrangea:"images/violetHydrangea.jpg"
+};
+</script>
+<script>
+/* =====================================================
+   EDIT HERE: your shop settings and products
+   ===================================================== */
+const SETTINGS={
+  whatsapp:"918339071507",      // country code + number, no + or spaces
+  instagram:"coco._.blooms",
+  currency:"₹"
+};
+// Tabs on the shop. Add a name here to create a new category.
+const CATEGORIES=["Bouquets","Hair Accessories","Keychains","Flower pots"];
+
+// Optional tag:"New" shows a badge on the photo. To add an item, copy one line, change the values, and set img to a key from the IMG list at the bottom.
+const PRODUCTS=[
+  {name:"Sunflower Garden",  category:"Bouquets", tag:"Popular", price:799,  img:"sunflowerGarden",  desc:"Five fluffy sunflowers with daisies in a pink wrap."},
+  {name:"Sunset Lily & Tulip",category:"Bouquets", tag:"Premium", price:2499, img:"sunsetLily",       desc:"Orange lilies, tulips and blossoms in a big statement bouquet."},
+  {name:"Evil Eye Blue",     category:"Bouquets", tag:"Gift pick", price:699,  img:"evilEye",          desc:"Evil eye charm and blue lilies, with a custom message card."},
+  {name:"Purple Lily Mini",  category:"Bouquets", price:299,  img:"purpleLily",       desc:"A single lily and daisies in a pocket-size wrap."},
+  {name:"Single Sunflower",  category:"Bouquets", price:449,  img:"singleSunflower",  desc:"One bright sunflower in newsprint wrap with a yellow bow."},
+  {name:"Midnight Sunflower",category:"Bouquets", tag:"New", price:399,  img:"blackSunflower",   desc:"A sunny sunflower in sleek black wrapping."},
+  {name:"Blue Hydrangea",    category:"Bouquets", price:499,  img:"blueHydrangea",    desc:"A cloud of blue blossoms with pearls and pleated ribbon."},
+  {name:"Violet Hydrangea",  category:"Bouquets", price:499,  img:"violetHydrangea",  desc:"Deep violet blooms with pearls in a frilly wrap."},
+  {name:"Lavender Bow Clips", category:"Hair Accessories", price:55, img:"hair1", desc:"A pair of fluffy lavender bows with pearl centres."},
+  {name:"Pink Blossom Clip", category:"Hair Accessories", price:55, img:"hair2", desc:"A soft pink five-petal flower with pearl stamens."},
+  {name:"Sky Blue Blossom Clip", category:"Hair Accessories", price:55, img:"hair3", desc:"A pale blue flower clip with white stamens."},
+  {name:"Red Blossom Clip", category:"Hair Accessories", price:55, img:"hair4", desc:"A bold red flower clip with pearl stamens."},
+  {name:"Cherry Bow Clip", category:"Hair Accessories", price:55, img:"hair5", desc:"Two red roses on green stems tied with a bow."},
+  {name:"Evil Eye Clip", category:"Hair Accessories", price:55, img:"hair6", desc:"A layered evil eye in blue and white pipecleaner."},
+  {name:"Hot Pink Blossom Clip", category:"Hair Accessories", price:55, img:"hair7", desc:"A bright fuchsia flower clip with pearl stamens."},
+  {name:"Baby Pink Bow Clips", category:"Hair Accessories", price:55, img:"hair8", desc:"A pair of soft pink bows with pearl centres."},
+  {name:"Sky Blue Bow Clips", category:"Hair Accessories", price:55, img:"hair9", desc:"A pair of baby blue bows with pearl centres."},
+  {name:"Rose Pink Bow Clips", category:"Hair Accessories", price:55, img:"hair10", desc:"A pair of rose pink bows with pearl centres."},
+  {name:"Blue Daisy Clips", category:"Hair Accessories", price:55, img:"hair11", desc:"Two sky blue daisies with sunny yellow centres."},
+  {name:"Sunny Yellow Blossom Clip", category:"Hair Accessories", price:55, img:"hair12", desc:"A cheerful yellow flower clip with white stamens."},
+  {name:"Purple Daisy Clips", category:"Hair Accessories", price:55, img:"hair13", desc:"Two purple daisies with yellow centres."},
+  {name:"Sunshine Daisy Clips", category:"Hair Accessories", price:55, img:"hair14", desc:"Yellow daisies with soft pink centres."},
+  {name:"Royal Blue Daisy Clips", category:"Hair Accessories", price:55, img:"hair15", desc:"Two royal blue daisies with yellow centres."},
+  {name:"Lavender Lily Clip", category:"Hair Accessories", price:55, img:"hair16", desc:"A lavender lily clip with white stamens."},
+  {name:"Blush Daisy Clips", category:"Hair Accessories", price:55, img:"hair17", desc:"Blush pink daisies with hot pink centres."},
+  {name:"Red Star Clips", category:"Hair Accessories", price:55, img:"hair18", desc:"Two red pipecleaner stars on black clips."},
+  {name:"Fuchsia Daisy Clips", category:"Hair Accessories", price:55, img:"hair19", desc:"Two fuchsia daisies with yellow centres."},
+  {name:"Pink Daisy Clips", category:"Hair Accessories", price:55, img:"hair20", desc:"Two pink daisies with yellow centres."},
+  {name:"Pastel Bunny Ear Hairband", category:"Hair Accessories", price:149, img:"hb1", desc:"Twisted pastel hairband with bunny ears, flowers and pearls."},
+  {name:"Aqua Bunny Ear Hairband", category:"Hair Accessories", price:149, img:"hb2", desc:"An aqua hairband with pink-lined bunny ears."},
+  {name:"Pastel Flower Hairband", category:"Hair Accessories", price:99, img:"hb3", desc:"A peach hairband with lavender and mint blossoms."},
+  {name:"Sunflower Hairband", category:"Hair Accessories", price:129, img:"hb4", desc:"A brown hairband with a row of bright sunflowers."},
+  {name:"Black Cat Ear Hairband", category:"Hair Accessories", price:129, img:"hb5", desc:"A black hairband with pink-lined cat ears."},
+  {name:"Red Bunny Hairband", category:"Hair Accessories", price:149, img:"hb6", desc:"A red hairband with fluffy white bunny faces and ears."},
+  {name:"Lilac Bunny Bow Hairband", category:"Hair Accessories", price:149, img:"hb7", desc:"A lilac hairband with pink bunny ears and an aqua bow."},
+  {name:"Kitty Face Keychain", category:"Keychains", price:149, img:"kc1", desc:"A fluffy white kitty face with a pink bow and whiskers."},
+  {name:"Pink Lily Keychain", category:"Keychains", price:149, img:"kc2", desc:"A soft pink pipecleaner lily on a metal ring."},
+  {name:"Paw Keychains", category:"Keychains", price:139, img:"kc3", desc:"Cute paw keychains in pink and white or pink and black."},
+  {name:"Blush Lily Keychain", category:"Keychains", price:149, img:"kc4", desc:"A pink and white lily with green edges."},
+  {name:"Yellow Lily Keychain", category:"Keychains", price:129, img:"kc5", desc:"A sunny yellow lily with lavender centre."},
+  {name:"Lavender Lily Keychain", category:"Keychains", price:179, img:"kc6", desc:"A dreamy lavender lily on a metal ring."},
+  {name:"Grapes Keychain", category:"Keychains", price:49, img:"kc7", desc:"A bunch of purple grapes with pearls and green leaves."},
+  {name:"Strawberry Bunny Keychain", category:"Keychains", price:139, img:"kc8", desc:"A little bunny peeking out of a pearl-dotted strawberry."},
+  {name:"Custom Logo Keychain", category:"Keychains", price:89, img:"kc9", desc:"A round logo keychain made to order in your colours."},
+  {name:"Duckling Keychain", category:"Keychains", price:199, img:"kc10", desc:"A cheerful yellow duckling with flowers."},
+  {name:"Panda Keychain", category:"Keychains", price:59, img:"kc11", desc:"A tiny cuddly panda with pink cheeks."},
+  {name:"Octopus Keychains", category:"Keychains", price:139, img:"kc12", desc:"Smiley octopus keychains with bows, in lilac, yellow and aqua."},
+  {name:"Tulip Tassel Keychain", category:"Keychains", price:89, img:"kc13", desc:"Colourful tulips with pearl strings and green leaves."},
+  {name:"Daisy Crown Hairband", category:"Hair Accessories", price:99, img:"hb8", desc:"A green hairband with a crown of white daisies."},
+  {name:"Aqua Bunny Blossom Hairband", category:"Hair Accessories", price:149, img:"hb9", desc:"A twisted aqua hairband with bunny ears and yellow blossoms."},
+  {name:"Peach Daisy Flower Pot", category:"Flower pots", price:199, img:"fp1", desc:"A peach pot with pink, lilac and white daisies."},
+  {name:"Red Gerbera Flower Pot", category:"Flower pots", price:199, img:"fp2", desc:"A bold red gerbera in a cosy brown pot."},
+  {name:"Cactus Flower Pot", category:"Flower pots", price:199, img:"fp3", desc:"Two blooming cacti in a pot with a pearl bow."},
+  {name:"Purple Gerbera Flower Pot", category:"Flower pots", price:299, img:"fp4", desc:"A purple gerbera with little white daisies."},
+  {name:"Pink Gerbera Flower Pot", category:"Flower pots", price:299, img:"fp5", desc:"A soft pink gerbera with white daisies."},
+  {name:"Lilac Blossom Flower Pot", category:"Flower pots", price:199, img:"fp6", desc:"A cluster of lilac blossoms in a tan pot."},
+  {name:"Sunflower Flower Pot", category:"Flower pots", price:299, img:"fp7", desc:"A bright sunflower with white daisies."},
+  {name:"Pink Daisy Flower Pot", category:"Flower pots", price:299, img:"fp8", desc:"A big pink daisy with white daisy friends."},
+  {name:"Blue Daisy Flower Pot", category:"Flower pots", price:299, img:"fp12", desc:"A big blue daisy with white daisy friends."},
+  {name:"White Daisy Flower Pot", category:"Flower pots", price:199, img:"fp9", desc:"A bunch of white daisies in a copper pot."},
+  {name:"Lavender Gerbera Flower Pot", category:"Flower pots", price:199, img:"fp10", desc:"A lavender gerbera in a chocolate brown pot."},
+  {name:"Mini Sunflower Bouquet", category:"Bouquets", price:349, img:"mb1", desc:"A tabletop sunflower bouquet in a sky blue wrap."},
+  {name:"Lilac Gerbera Flower Pot", category:"Flower pots", price:299, img:"fp11", desc:"A lilac gerbera with a white daisy."},
+  {name:"Mini Lilac Bouquet", category:"Bouquets", price:249, img:"mb2", desc:"A tabletop lilac bouquet in a pink wrap."},
+  // Example keychain (remove the // to use it, and add its photo to IMG):
+  // {name:"Daisy Keychain", category:"Keychains", price:149, img:"daisyKey", desc:"A tiny handmade daisy for your keys or bag."},
+];
+/* ===================================================== */
+
+const g=document.getElementById("grid"),tabs=document.getElementById("tabs");
+const wa=t=>`https://wa.me/${SETTINGS.whatsapp}?text=${encodeURIComponent(t)}`;
+const money=n=>SETTINGS.currency+Number(n).toLocaleString("en-IN");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function card(p){return `<article class="card"><div class="ph" data-n="${esc(p.name)}" tabindex="0" role="button" aria-label="Quick view ${esc(p.name)}">${p.tag?`<span class="tg">${esc(p.tag)}</span>`:""}<span class="qv">Quick view</span><img loading="lazy" src="${IMG[p.img]||""}" alt="${esc(p.name)}"></div><div class="bd"><div class="row"><h3>${esc(p.name)}</h3><span class="price">${money(p.price)}</span></div><p>${esc(p.desc)}</p><a class="btn" target="_blank" rel="noopener" href="${wa(`Hi Coco Blooms! I'd like to order: ${p.name} (${money(p.price)}).`)}">Order on WhatsApp</a></article>`.replace("</a></article>","</a></div></article>")}
+function soon(c){return `<div class="card soon"><div class="em">🌸</div><h3>${esc(c)}</h3><p>Coming soon. Message us to order a custom piece.</p></div>`}
+const FILT={c:"all",b:"all",s:"def"},BUD={all:[0,1e9],u1:[0,99],u2:[0,199],u5:[0,499],m:[500,1000],p:[1001,1e9]};const sortF=a=>{const[lo,hi]=BUD[FILT.b];a=a.filter(p=>p.price>=lo&&p.price<=hi);return FILT.s==="lo"?[...a].sort((x,y)=>x.price-y.price):FILT.s==="hi"?[...a].sort((x,y)=>y.price-x.price):a};
+function show(f){if(f)FILT.c=f;f=FILT.c;
+  const cats=f==="all"?CATEGORIES:[f];let h="";
+  cats.forEach(c=>{const items=sortF(PRODUCTS.filter(p=>p.category===c));h+=items.length?items.map(card).join(""):(FILT.b==="all"?soon(c):"")});
+  sortF(PRODUCTS.filter(p=>!CATEGORIES.includes(p.category))).forEach(p=>h+=card(p));if(!h)h='<p class="empty">No items in this range yet. Message us for a custom one!</p>';
+  g.innerHTML=h}
+tabs.innerHTML=["all",...CATEGORIES].map((c,i)=>`<button class="tab" aria-pressed="${i==0}" data-f="${esc(c)}">${c==="all"?"All":esc(c)}</button>`).join("");
+tabs.onclick=e=>{const b=e.target.closest(".tab");if(!b)return;tabs.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-pressed",x===b));show(b.dataset.f)};
+show("all");
+document.getElementById("wa").href=wa("Hi Coco Blooms! I'd like to place an order.");
+document.getElementById("wa2").href=wa("Hi Coco Blooms! I'd like a custom order.");
+document.getElementById("ig").href="https://instagram.com/"+SETTINGS.instagram;
+document.getElementById("f").onsubmit=e=>{e.preventDefault();const d=new FormData(e.target);window.open(wa(`Hi Coco Blooms! I'm ${d.get("n")}. I'd like: ${d.get("p")}. ${d.get("m")}`),"_blank")};
+const w=["Handmade pipecleaner bouquets","Flower pots","Keychains","Custom colours","A forever bloom for every occasion"].join("  ✿  ")+"  ✿  ";
+
+document.querySelectorAll("img[data-img]").forEach(i=>i.src=IMG[i.dataset.img]);
+const hero=document.querySelector(".hero"),st=document.querySelector(".stack"),sc=document.querySelector(".scene");
+if(matchMedia("(hover:hover)").matches&&!matchMedia("(prefers-reduced-motion:reduce)").matches){
+ hero.addEventListener("mousemove",e=>{const r=sc.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;st.style.setProperty("--ry",x*24+"deg");st.style.setProperty("--rx",-y*18+"deg")});
+ hero.addEventListener("mouseleave",()=>{st.style.setProperty("--ry","0deg");st.style.setProperty("--rx","0deg")});
+ g.addEventListener("mousemove",e=>{const c=e.target.closest(".card");if(!c)return;const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(800px) rotateY(${x*12}deg) rotateX(${-y*12}deg) translateY(-6px)`});
+ g.addEventListener("mouseout",e=>{const c=e.target.closest(".card");if(c)c.style.transform=""});
+}
+const pe=document.getElementById("petals");
+for(let i=0;i<14;i++){const s=document.createElement("span");s.textContent=["✿","❀","✾"][i%3];s.style.cssText=`left:${Math.random()*100}%;font-size:${14+Math.random()*20}px;animation-duration:${9+Math.random()*10}s;animation-delay:${-Math.random()*14}s`;pe.appendChild(s)}
+const gl=document.getElementById("gal"),ks=["sunflowerGarden","kc8","hair5","fp2","evilEye","hb4","kc12","hair11","sunsetLily","fp3","kc11","hb6","blueHydrangea","fp7","hair14","kc13","mb1","hb5","hair1","fp4","kc7"];
+gl.innerHTML=[...ks,...ks].map(k=>`<img loading="lazy" alt="" src="${IMG[k]}">`).join("");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".head,.about .wrap>*,.step,.custom,.contact .wrap>*").forEach(e=>{e.classList.add("reveal");io.observe(e)});
+const pgb=document.getElementById("pg");addEventListener("scroll",()=>{pgb.style.width=100*scrollY/(document.documentElement.scrollHeight-innerHeight)+"%"},{passive:true});
+
+const bq=document.getElementById("bq"),pcs=[];
+const pt=(cx,cy,n,rx,ry,o,c)=>{let s="";for(let i=0;i<n;i++)s+=`<ellipse cx="${cx}" cy="${cy-o}" rx="${rx}" ry="${ry}" fill="${c}" transform="rotate(${i*360/n} ${cx} ${cy})"/>`;return s};
+const tul=(x,y,c)=>`<g transform="translate(${x} ${y})"><path d="M-24 0Q-28-42-11-56L0-40L11-56Q28-42 24 0Q0 20-24 0Z" fill="${c}"/><path d="M0-40Q-6-20 0 6Q6-20 0-40Z" fill="#fff3" /></g>`;
+const dz=(x,y)=>pt(x,y,8,7,13,14,"#fff")+`<circle cx="${x}" cy="${y}" r="7" fill="#F7B500"/>`;
+const add=(h,f,s,e)=>{const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("class","pc");g.innerHTML=h;bq.appendChild(g);pcs.push({g,f,s,e})};
+const G='stroke="#E3A93A" stroke-width="4" stroke-linejoin="round"';
+add(`<path d="M200 345L38 125Q200 55 362 125Z" fill="#FFB6CB" ${G}/><path d="M200 345L100 105L165 80Z" fill="#FFD3E0"/>`,[0,420,0],0,.14);
+add(`<g stroke="#4F8A2B" stroke-width="7" stroke-linecap="round" fill="none"><path d="M200 410V175"/><path d="M200 410Q150 300 120 205"/><path d="M200 410Q250 300 285 215"/><path d="M200 410Q175 330 150 285"/><path d="M200 410Q230 330 255 285"/></g>`,[0,200,0],.1,.24);
+add(`<ellipse cx="112" cy="270" rx="16" ry="48" fill="#6BA339" transform="rotate(-42 112 270)"/><ellipse cx="290" cy="262" rx="16" ry="48" fill="#79B544" transform="rotate(42 290 262)"/>`,[0,160,0],.2,.34);
+add(pt(200,150,14,15,34,34,"#F7B500")+`<circle cx="200" cy="150" r="29" fill="#5A2A1A"/><circle cx="200" cy="150" r="18" fill="#7A3B22"/>`,[0,-420,200],.3,.44);
+add(tul(120,208,"#E8457F"),[-300,-200,-90],.38,.5);
+add(tul(285,218,"#F58A1F"),[300,-200,90],.44,.56);
+add(dz(140,255)+dz(262,265)+dz(232,214),[0,-300,120],.5,.66);
+add(pt(200,262,6,14,38,36,"#FF8FB1")+`<circle cx="200" cy="262" r="8" fill="#FFD166"/>`+[0,1,2,3,4].map(i=>`<circle cx="${186+i*7}" cy="${250+(i%2)*5}" r="3" fill="#8A3B22"/>`).join(""),[0,-420,-200],.6,.74);
+add(`<path d="M200 410L52 190Q125 280 200 305Z" fill="#FF9DBB" ${G}/><path d="M200 410L348 190Q275 280 200 305Z" fill="#FFB6CB" ${G}/><path d="M125 330L275 330L228 478Q200 492 172 478Z" fill="#FFC9D8" ${G}/>`,[0,380,0],.72,.86);
+add(`<ellipse cx="170" cy="404" rx="30" ry="15" fill="#F7B500" transform="rotate(-20 170 404)"/><ellipse cx="230" cy="404" rx="30" ry="15" fill="#F7B500" transform="rotate(20 230 404)"/><path d="M196 410L170 480L190 470L200 490L206 410Z" fill="#E8457F"/><path d="M204 410L238 478L216 468L208 410Z" fill="#E8457F"/><circle cx="200" cy="406" r="11" fill="#E8457F"/>`,[0,300,25],.84,.98);
+const caps=[[0,"Start with soft pink wrapping paper."],[.12,"Add the stems and fresh green leaves."],[.3,"Sunflowers, tulips and daisies join the party."],[.6,"A lily takes centre stage."],[.82,"Wrap it up, tie the ribbon, and it's ready to gift!"]];
+const cap=document.getElementById("cap"),bar=document.getElementById("bar"),bd=document.getElementById("build"),cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+let last=-1;
+function upd(){let p=matchMedia("(prefers-reduced-motion:reduce)").matches?1:cl(-bd.getBoundingClientRect().top/(bd.offsetHeight-innerHeight));
+ pcs.forEach(o=>{const t=cl((p-o.s)/(o.e-o.s)),e=1+2.2*Math.pow(t-1,3)+1.2*Math.pow(t-1,2),k=1-e;o.g.style.opacity=cl(t*3);o.g.style.transform=`translate(${o.f[0]*k}px,${o.f[1]*k}px) rotate(${o.f[2]*k}deg) scale(${.5+.5*e})`});
+ bar.style.width=p*100+"%";const c=[...caps].reverse().find(x=>p>=x[0])[1];if(cap.textContent!==c)cap.textContent=c}
+addEventListener("scroll",()=>requestAnimationFrame(upd),{passive:true});addEventListener("resize",upd);upd();
+
+const BL=[["all","Any budget"],["u1","Under "+SETTINGS.currency+"100"],["u2","Under "+SETTINGS.currency+"200"],["u5","Under "+SETTINGS.currency+"500"],["m",SETTINGS.currency+"500 – "+SETTINGS.currency+"1,000"],["p","Above "+SETTINGS.currency+"1,000"]];
+const bud=document.getElementById("bud"),srt=document.getElementById("sort");
+function setB(v){FILT.b=v;bud.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-pressed",x.dataset.b===v));show()}
+bud.innerHTML=BL.map(([v,l])=>`<button class="tab" aria-pressed="${v==="all"}" data-b="${v}">${l}</button>`).join("");
+bud.onclick=e=>{const b=e.target.closest(".tab");if(b)setB(b.dataset.b)};
+srt.onchange=()=>{FILT.s=srt.value;show()};
+document.querySelectorAll(".bgt").forEach(b=>{const[lo,hi]=BUD[b.dataset.b];{const n=PRODUCTS.filter(p=>p.price>=lo&&p.price<=hi).length;b.querySelector("em").textContent=n+(n==1?" item":" items")};b.onclick=()=>{setB(b.dataset.b);document.getElementById("shop").scrollIntoView({behavior:"smooth"})}});
+document.querySelectorAll(".walink").forEach(a=>a.href=wa("Hi Coco Blooms!"));
+document.querySelectorAll(".iglink").forEach(a=>a.href="https://instagram.com/"+SETTINGS.instagram);
+
+const $=id=>document.getElementById(id);let list=[],cur=0;
+function fillQ(){const p=list[cur];$("mi").src=IMG[p.img];$("mi").alt=p.name;$("mn").textContent=p.name;$("mp").textContent=money(p.price);$("mdsc").textContent=p.desc;$("mtag").textContent=p.tag||p.category;$("mo").href=wa(`Hi Coco Blooms! I'd like to order: ${p.name} (${money(p.price)}).`)}
+function openQ(n){list=PRODUCTS.filter(p=>IMG[p.img]);cur=Math.max(0,list.findIndex(p=>p.name===n));fillQ();$("modal").hidden=false;document.body.style.overflow="hidden";$("mx").focus()}
+function closeQ(){$("modal").hidden=true;document.body.style.overflow=""}
+const stepQ=d=>{cur=(cur+d+list.length)%list.length;fillQ()};
+g.addEventListener("click",e=>{const ph=e.target.closest(".ph");if(ph)openQ(ph.dataset.n)});
+g.addEventListener("keydown",e=>{if(e.key==="Enter"){const ph=e.target.closest(".ph");if(ph)openQ(ph.dataset.n)}});
+$("mx").onclick=closeQ;$("modal").onclick=e=>{if(e.target.id==="modal")closeQ()};$("mprev").onclick=()=>stepQ(-1);$("mnext").onclick=()=>stepQ(1);
+addEventListener("keydown",e=>{if($("modal").hidden)return;if(e.key==="Escape")closeQ();if(e.key==="ArrowLeft")stepQ(-1);if(e.key==="ArrowRight")stepQ(1)});
+
+</script></body></html>
